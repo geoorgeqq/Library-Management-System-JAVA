@@ -20,7 +20,7 @@ public class DbFunctions {
 
         try {
             String query = String.format("INSERT INTO " + table_name + " (title,author,isavailable)" +
-                    " VALUES ('" + title + "','" + author + "'," + "'0')");
+                    " VALUES ('" + title + "','" + author + "'," + "'1')");
             statement = conn.createStatement();
             statement.executeUpdate(query);
             System.out.println("Book added succesfully!");

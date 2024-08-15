@@ -25,7 +25,7 @@ public class Main {
                     break;
                 }
                 if (command.equals("1")) {
-                    db.listItems(conn,"library_table");
+                    db.listItems(conn, "library_table");
                 } else if (command.equals("2")) {
                     System.out.println("Title:");
                     String title = scanner.nextLine();
@@ -37,13 +37,13 @@ public class Main {
                     db.listAvailableBooks(conn, "library_table");
                     System.out.println("Book id: ");
                     int bookID = Integer.parseInt(scanner.nextLine());
-                    db.borrowBook(conn,"library_table",bookID);
-                } else if(command.equals("4")){
+                    db.borrowBook(conn, "library_table", bookID);
+                } else if (command.equals("4")) {
                     System.out.println("Borrowed books: ");
                     db.listBorrowedBooks(conn, "library_table");
                     System.out.println("Book title:");
                     int bookID = Integer.parseInt(scanner.nextLine());
-                    db.returnBook(conn,"library_table",bookID);
+                    db.returnBook(conn, "library_table", bookID);
                 }
 
             }
