@@ -33,9 +33,17 @@ public class Main {
                     String author = scanner.nextLine();
                     db.insert_row(conn, "library_table", title, author);
                 } else if (command.equals("3")) {
-                    System.out.println("Book title: ");
-                    String bookTitle = scanner.nextLine();
-                    db.borrowBook(conn,"library_table",bookTitle);
+                    System.out.println("Available books: ");
+                    db.listAvailableBooks(conn, "library_table");
+                    System.out.println("Book id: ");
+                    int bookID = Integer.parseInt(scanner.nextLine());
+                    db.borrowBook(conn,"library_table",bookID);
+                } else if(command.equals("4")){
+                    System.out.println("Borrowed books: ");
+                    db.listBorrowedBooks(conn, "library_table");
+                    System.out.println("Book title:");
+                    int bookID = Integer.parseInt(scanner.nextLine());
+                    db.returnBook(conn,"library_table",bookID);
                 }
 
             }
